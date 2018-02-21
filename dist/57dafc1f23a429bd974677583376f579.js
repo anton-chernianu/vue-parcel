@@ -8224,7 +8224,7 @@ exports.mapGetters = mapGetters;
 exports.mapActions = mapActions;
 exports.createNamespacedHelpers = createNamespacedHelpers;
 exports.default = index_esm;
-},{}],7:[function(require,module,exports) {
+},{}],10:[function(require,module,exports) {
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -8482,7 +8482,7 @@ exports.reload = tryWrap(function (id, options) {
 },{}],3:[function(require,module,exports) {
 "use strict";
 
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("/* line 52, stdin */\n.main-content {\n  padding: 15px; }\n\n/* line 55, stdin */\n.btn {\n  margin: 15px; }\n\n/* line 59, stdin */\n.add-guest label {\n  padding: 10px; }");(function () {
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("/* line 53, stdin */\n.main-content {\n  padding: 15px; }\n\n/* line 56, stdin */\n.btn {\n  margin: 15px; }\n\n/* line 60, stdin */\n.add-guest label {\n  padding: 10px; }");(function () {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -8520,12 +8520,12 @@ if (__vue__options__.functional) {
 	console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.");
 }
 __vue__options__.render = function render() {
-	var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "main-app" } }, [_c('div', { staticClass: "main-content" }, [_c('h6', [_vm._v("Name:")]), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.name, expression: "name" }], attrs: { "type": "text", "value": "" }, domProps: { "value": _vm.name }, on: { "input": function input($event) {
+	var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "main-app" } }, [_c('div', { staticClass: "main-content" }, [_c('p', [_vm._v(_vm._s(_vm.msgs))]), _c('h6', [_vm._v("Name:")]), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.name, expression: "name" }], attrs: { "type": "text", "value": "" }, domProps: { "value": _vm.name }, on: { "input": function input($event) {
 				if ($event.target.composing) {
 					return;
 				}_vm.name = $event.target.value;
 			} } }), _c('br'), _c('label', [_vm._v("Guests ")]), _c('input', { staticClass: "btn btn-primary", attrs: { "type": "button", "value": "+" }, on: { "click": _vm.addGuest } }), _vm._l(_vm.guests, function (guest, index) {
-		return _c('div', { staticClass: "add-guest" }, [_c('label', { on: { "dblclick": function dblclick($event) {
+		return _c('div', { staticClass: "add-guest" }, [_c('label', { on: { "click": function click($event) {
 					_vm.deleteGuest(index);
 				} } }, [_vm._v("Guest "), _c('span', [_vm._v("#")]), _vm._v(_vm._s(index + 1))]), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.guests[index], expression: "guests[index]" }], staticClass: "guest", attrs: { "type": "text" }, domProps: { "value": _vm.guests[index] }, on: { "input": function input($event) {
 					if ($event.target.composing) {
@@ -8551,7 +8551,7 @@ if (module.hot) {
 		}
 	})();
 }
-},{"vueify/lib/insert-css":7,"vue-hot-reload-api":6,"vue":4}],2:[function(require,module,exports) {
+},{"vueify/lib/insert-css":10,"vue-hot-reload-api":6,"vue":4}],2:[function(require,module,exports) {
 'use strict';
 
 var _vue = require('vue');
@@ -8595,7 +8595,7 @@ function Module(config) {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:11747/');
+  var ws = new WebSocket('ws://localhost:11826/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 

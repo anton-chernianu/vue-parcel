@@ -1,6 +1,7 @@
 <template lang="pug">
 	#main-app
 		.main-content
+			p {{msgs}}
 			h6 Name:
 			input(type="text" value="" v-model="name")
 			br
@@ -10,7 +11,7 @@
 						value="+"
 						v-on:click="addGuest")
 			.add-guest(v-for="(guest, index) in guests")
-				label(v-on:dblclick="deleteGuest(index)") Guest <span>#</span>{{index + 1}}
+				label(v-on:click="deleteGuest(index)") Guest <span>#</span>{{index + 1}}
 				input(class="guest" type="text" v-model="guests[index]")
 			.list
 				ul
@@ -48,7 +49,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 .main-content {
 	padding: 15px;
 }
