@@ -1,27 +1,20 @@
-<template>
-	<div id="main-app">
-		<div class="main-content">	
-
-		<h6>Name:</h6>
-		<input type="text" value="" v-model="name"><br>
-
-		<label>Guests</label>
-		<input type="button" 
-			class="btn btn-primary" 
-			value="+"
-			v-on:click="addGuest"
-		>
-			<div v-for="(guest, index) in guests" class="add-guest">
-				<label v-on:dblclick="deleteGuest(index)">Input № {{ index + 1 }}</label>    
-				<input class="guest" type="text" v-model="guests[index]">
-			</div>
-			<div class="guest-list">
-				<ul>
-					<li v-for="(guest, index) in guests">{{ guest }}</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+<template lang="pug">
+	#main-app
+		.main-content
+			h6 Name:
+			input(type="text" value="" v-model="name")
+			br
+			label Guests 
+			input(type="button" 
+						class="btn btn-primary" 
+						value="+"
+						v-on:click="addGuest")
+			.add-guest(v-for="(guest, index) in guests")
+				label(v-on:dblclick="deleteGuest(index)") Guest <span>#</span>{{index + 1}}
+				input(class="guest" type="text" v-model="guests[index]")
+			.list
+				ul
+					li(v-for="(guest, index) in guests") {{ guest }}
 </template>
 
 <script>
@@ -55,14 +48,16 @@ export default {
 }
 </script>
 
-<style>
-.btn {
-	margin: 10px 0;
-}
+<style lang="sass">
 .main-content {
 	padding: 15px;
 }
+.btn {
+	margin: 15px;
+}
 .add-guest {
-	margin: 10px 0;
+	label {
+		padding:10px;
+	}
 }
 </style>

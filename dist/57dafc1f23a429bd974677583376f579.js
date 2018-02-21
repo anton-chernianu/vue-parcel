@@ -68,7 +68,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({5:[function(require,module,exports) {
+})({4:[function(require,module,exports) {
 var global = (1,eval)("this");
 'use strict';
 
@@ -7266,7 +7266,7 @@ Vue$3.nextTick(function () {
 /*  */
 
 exports.default = Vue$3;
-},{}],6:[function(require,module,exports) {
+},{}],5:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8224,7 +8224,7 @@ exports.mapGetters = mapGetters;
 exports.mapActions = mapActions;
 exports.createNamespacedHelpers = createNamespacedHelpers;
 exports.default = index_esm;
-},{}],8:[function(require,module,exports) {
+},{}],7:[function(require,module,exports) {
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -8249,7 +8249,7 @@ exports.insert = function (css) {
   }
 }
 
-},{}],7:[function(require,module,exports) {
+},{}],6:[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -8482,7 +8482,7 @@ exports.reload = tryWrap(function (id, options) {
 },{}],3:[function(require,module,exports) {
 "use strict";
 
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".btn {\r\n\tmargin: 10px 0;\r\n}\r\n.main-content {\r\n\tpadding: 15px;\r\n}\r\n.add-guest {\r\n\tmargin: 10px 0;\r\n}");(function () {
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("/* line 52, stdin */\n.main-content {\n  padding: 15px; }\n\n/* line 55, stdin */\n.btn {\n  margin: 15px; }\n\n/* line 59, stdin */\n.add-guest label {\n  padding: 10px; }");(function () {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -8520,19 +8520,19 @@ if (__vue__options__.functional) {
 	console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.");
 }
 __vue__options__.render = function render() {
-	var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "main-app" } }, [_c('div', { staticClass: "main-content" }, [_c('h6', [_vm._v("Name:")]), _vm._v(" "), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.name, expression: "name" }], attrs: { "type": "text", "value": "" }, domProps: { "value": _vm.name }, on: { "input": function input($event) {
+	var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "main-app" } }, [_c('div', { staticClass: "main-content" }, [_c('h6', [_vm._v("Name:")]), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.name, expression: "name" }], attrs: { "type": "text", "value": "" }, domProps: { "value": _vm.name }, on: { "input": function input($event) {
 				if ($event.target.composing) {
 					return;
 				}_vm.name = $event.target.value;
-			} } }), _c('br'), _vm._v(" "), _c('label', [_vm._v("Guests")]), _vm._v(" "), _c('input', { staticClass: "btn btn-primary", attrs: { "type": "button", "value": "+" }, on: { "click": _vm.addGuest } }), _vm._v(" "), _vm._l(_vm.guests, function (guest, index) {
+			} } }), _c('br'), _c('label', [_vm._v("Guests ")]), _c('input', { staticClass: "btn btn-primary", attrs: { "type": "button", "value": "+" }, on: { "click": _vm.addGuest } }), _vm._l(_vm.guests, function (guest, index) {
 		return _c('div', { staticClass: "add-guest" }, [_c('label', { on: { "dblclick": function dblclick($event) {
 					_vm.deleteGuest(index);
-				} } }, [_vm._v("Input № " + _vm._s(index + 1))]), _vm._v(" "), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.guests[index], expression: "guests[index]" }], staticClass: "guest", attrs: { "type": "text" }, domProps: { "value": _vm.guests[index] }, on: { "input": function input($event) {
+				} } }, [_vm._v("Guest "), _c('span', [_vm._v("#")]), _vm._v(_vm._s(index + 1))]), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.guests[index], expression: "guests[index]" }], staticClass: "guest", attrs: { "type": "text" }, domProps: { "value": _vm.guests[index] }, on: { "input": function input($event) {
 					if ($event.target.composing) {
 						return;
 					}_vm.$set(_vm.guests, index, $event.target.value);
 				} } })]);
-	}), _vm._v(" "), _c('div', { staticClass: "guest-list" }, [_c('ul', _vm._l(_vm.guests, function (guest, index) {
+	}), _c('div', { staticClass: "list" }, [_c('ul', _vm._l(_vm.guests, function (guest, index) {
 		return _c('li', [_vm._v(_vm._s(guest))]);
 	}))])], 2)]);
 };
@@ -8547,11 +8547,11 @@ if (module.hot) {
 		if (!module.hot.data) {
 			hotAPI.createRecord("data-v-dcb98644", __vue__options__);
 		} else {
-			hotAPI.reload("data-v-dcb98644", __vue__options__);
+			hotAPI.rerender("data-v-dcb98644", __vue__options__);
 		}
 	})();
 }
-},{"vueify/lib/insert-css":8,"vue-hot-reload-api":7,"vue":5}],2:[function(require,module,exports) {
+},{"vueify/lib/insert-css":7,"vue-hot-reload-api":6,"vue":4}],2:[function(require,module,exports) {
 'use strict';
 
 var _vue = require('vue');
@@ -8576,7 +8576,7 @@ new _vue2.default({
     return h(_App2.default);
   }
 });
-},{"vue":5,"vuex":6,"./App.vue":3}],0:[function(require,module,exports) {
+},{"vue":4,"vuex":5,"./App.vue":3}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
 function Module(config) {
@@ -8595,7 +8595,7 @@ function Module(config) {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:61531/');
+  var ws = new WebSocket('ws://localhost:11747/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 
