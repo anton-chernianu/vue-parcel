@@ -68,7 +68,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({4:[function(require,module,exports) {
+})({13:[function(require,module,exports) {
 var global = (1,eval)("this");
 'use strict';
 
@@ -7266,7 +7266,7 @@ Vue$3.nextTick(function () {
 /*  */
 
 exports.default = Vue$3;
-},{}],5:[function(require,module,exports) {
+},{}],14:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8224,32 +8224,7 @@ exports.mapGetters = mapGetters;
 exports.mapActions = mapActions;
 exports.createNamespacedHelpers = createNamespacedHelpers;
 exports.default = index_esm;
-},{}],10:[function(require,module,exports) {
-var inserted = exports.cache = {}
-
-function noop () {}
-
-exports.insert = function (css) {
-  if (inserted[css]) return noop
-  inserted[css] = true
-
-  var elem = document.createElement('style')
-  elem.setAttribute('type', 'text/css')
-
-  if ('textContent' in elem) {
-    elem.textContent = css
-  } else {
-    elem.styleSheet.cssText = css
-  }
-
-  document.getElementsByTagName('head')[0].appendChild(elem)
-  return function () {
-    document.getElementsByTagName('head')[0].removeChild(elem)
-    inserted[css] = false
-  }
-}
-
-},{}],6:[function(require,module,exports) {
+},{}],15:[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -8479,10 +8454,10 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],3:[function(require,module,exports) {
+},{}],18:[function(require,module,exports) {
 "use strict";
 
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("/* line 53, stdin */\n.main-content {\n  padding: 15px; }\n\n/* line 56, stdin */\n.btn {\n  margin: 15px; }\n\n/* line 60, stdin */\n.add-guest label {\n  padding: 10px; }");(function () {
+;(function () {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -8534,7 +8509,7 @@ __vue__options__.render = function render() {
 				} } })]);
 	}), _c('div', { staticClass: "list" }, [_c('ul', _vm._l(_vm.guests, function (guest, index) {
 		return _c('li', [_vm._v(_vm._s(guest))]);
-	}))])], 2)]);
+	}))]), _c('p', { staticClass: "hello" }, [_vm._v("Helloworld")])], 2)]);
 };
 __vue__options__.staticRenderFns = [];
 if (module.hot) {
@@ -8543,15 +8518,67 @@ if (module.hot) {
 		hotAPI.install(require("vue"), true);
 		if (!hotAPI.compatible) return;
 		module.hot.accept();
-		module.hot.dispose(__vueify_style_dispose__);
 		if (!module.hot.data) {
-			hotAPI.createRecord("data-v-dcb98644", __vue__options__);
+			hotAPI.createRecord("data-v-17940605", __vue__options__);
 		} else {
-			hotAPI.rerender("data-v-dcb98644", __vue__options__);
+			hotAPI.rerender("data-v-17940605", __vue__options__);
 		}
 	})();
 }
-},{"vueify/lib/insert-css":10,"vue-hot-reload-api":6,"vue":4}],2:[function(require,module,exports) {
+},{"vue-hot-reload-api":15,"vue":13}],8:[function(require,module,exports) {
+"use strict";
+
+;(function () {
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _test = require('./test.vue');
+
+	var _test2 = _interopRequireDefault(_test);
+
+	function _interopRequireDefault(obj) {
+		return obj && obj.__esModule ? obj : { default: obj };
+	}
+
+	exports.default = {
+		name: 'main-app',
+		data: function data() {
+			return {
+				msgs: 'Components 😑'
+			};
+		},
+
+		components: {
+			'test-app': _test2.default
+		}
+	};
+})();
+if (module.exports.__esModule) module.exports = module.exports.default;
+var __vue__options__ = typeof module.exports === "function" ? module.exports.options : module.exports;
+if (__vue__options__.functional) {
+	console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.");
+}
+__vue__options__.render = function render() {
+	var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('test-app');
+};
+__vue__options__.staticRenderFns = [];
+if (module.hot) {
+	(function () {
+		var hotAPI = require("vue-hot-reload-api");
+		hotAPI.install(require("vue"), true);
+		if (!hotAPI.compatible) return;
+		module.hot.accept();
+		if (!module.hot.data) {
+			hotAPI.createRecord("data-v-dcb98644", __vue__options__);
+		} else {
+			hotAPI.reload("data-v-dcb98644", __vue__options__);
+		}
+	})();
+}
+},{"./test.vue":18,"vue-hot-reload-api":15,"vue":13}],6:[function(require,module,exports) {
 'use strict';
 
 var _vue = require('vue');
@@ -8576,7 +8603,7 @@ new _vue2.default({
     return h(_App2.default);
   }
 });
-},{"vue":4,"vuex":5,"./App.vue":3}],0:[function(require,module,exports) {
+},{"vue":13,"vuex":14,"./App.vue":8}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
 function Module(config) {
@@ -8595,7 +8622,7 @@ function Module(config) {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:11826/');
+  var ws = new WebSocket('ws://localhost:26298/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 
@@ -8698,4 +8725,4 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id)
   });
 }
-},{}]},{},[0,2])
+},{}]},{},[0,6])
